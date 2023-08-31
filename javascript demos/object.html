@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Object type in Javascript</h1>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" id="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="text" id="gender" />
+            </td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>
+                <input type="text" id="city" />
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // var name = 'Vishal';
+        // var gender = 'Male';
+        // var city = 'Mumbai';
+        var student = { rollNumber: 10, name: 'Vishal', gender: 'Male', city: 'Mumbai' };
+
+        document.getElementById('name').value = student.name;
+        document.getElementById('gender').value = student.gender;
+        document.getElementById('city').value = student.city;
+
+        var newStudent = { rollNumber: 101, name: 'Shital', gender: 'Female', city: 'Pune' };
+        console.log(`new roll number: ${newStudent.rollNumber}`);
+        console.log(`new name: ${newStudent.name}`);
+        console.log(`new gender: ${newStudent.gender}`);
+        console.log(`new city: ${newStudent.city}`);
+
+        // json syntax
+        // var newStudent = { 'rollNumber': 101, 'name': 'Shital', 'gender': 'Female', 'city': 'Pune' };
+    </script>
+</body>
+
+</html>
