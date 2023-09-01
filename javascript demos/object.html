@@ -28,17 +28,66 @@
                 <input type="text" id="city" />
             </td>
         </tr>
+        <tr>
+            <td>
+                <h2>Address</h2>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>Line Number 1</td>
+                        <td>
+                            <input type="text" id="line1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Line Number 2</td>
+                        <td>
+                            <input type="text" id="line2" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Landmark</td>
+                        <td>
+                            <input type="text" id="landmark" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                            <input type="text" id="permcity" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
     </table>
 
     <script>
         // var name = 'Vishal';
         // var gender = 'Male';
         // var city = 'Mumbai';
-        var student = { rollNumber: 10, name: 'Vishal', gender: 'Male', city: 'Mumbai' };
+        var student = {
+            rollNumber: 10,
+            name: 'Vishal',
+            gender: 'Male',
+            city: 'Mumbai',
+            address: {
+                line1: 'viraj complex',
+                line2: 'near domnios',
+                landmark: 'sinhgad college',
+                city: 'satara'
+            }
+        };
 
         document.getElementById('name').value = student.name;
         document.getElementById('gender').value = student.gender;
         document.getElementById('city').value = student.city;
+        document.getElementById('line1').value = student.address.line1;
+        document.getElementById('line2').value = student.address.line2;
+        document.getElementById('landmark').value = student.address.landmark;
+        document.getElementById('permcity').value = student.address.city;
+
 
         var newStudent = { rollNumber: 101, name: 'Shital', gender: 'Female', city: 'Pune' };
         console.log(`new roll number: ${newStudent.rollNumber}`);

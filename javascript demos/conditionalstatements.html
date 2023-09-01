@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Conditional Statements Demo</h2>
+
+    <script>
+        var i = prompt('Please enter a number');
+        console.log(`Input is ${i} type : ${typeof i}`);
+        // // if else statement
+        // if (i == 1) {
+        //     console.log('January : Start Month Of Year');
+        // }
+        // else {
+        //     console.log(`Not Start Month Of Year`);
+        // }
+
+        // // ternary operator
+        // var result = (i == 1) ? 'Start Month Of Year' : 'Not Start Month Of Year';
+        // console.log(result);
+
+
+        // // if else if chain
+        // if (i == 1) {
+        //     console.log(`${i} : January`);
+        // } else if (i == 2) {
+        //     console.log(`${i} : February`);
+        // } else if (i == 3) {
+        //     console.log(`${i} : March`);
+        // } else if (i == 4) {
+        //     console.log(`${i} : April`);
+        // } else if (i == 5) {
+        //     console.log(`${i} : May`);
+        // } else if (i == 6) {
+        //     console.log(`${i} : June`);
+        // } else if (i == 7) {
+        //     console.log(`${i} : July`);
+        // } else if (i == 8) {
+        //     console.log(`${i} : August`);
+        // } else if (i == 9) {
+        //     console.log(`${i} : September`);
+        // } else if (i == 10) {
+        //     console.log(`${i} : October`);
+        // } else if (i == 11) {
+        //     console.log(`${i} : November`);
+        // } else if (i == 12) {
+        //     console.log(`${i} : December`);
+        // } else{
+        //     console.log(`${i} : INVALID MONTH NUMBER`);
+        // }
+
+        // switch statement
+
+        switch (i) {
+            case '1':
+                console.log(`${i} : January`);
+                break;
+            case '2':
+                console.log(`${i} : February`);
+                break;
+            case '3':
+                console.log(`${i} : March`);
+                break;
+            case '4':
+                console.log(`${i} : April`);
+                break;
+            case '5':
+                console.log(`${i} : May`);
+                break;
+            case '6':
+                console.log(`${i} : June`);
+                break;
+            case '7':
+                console.log(`${i} : July`);
+                break;
+            case '8':
+                console.log(`${i} : August`);
+                break;
+            case '9':
+                console.log(`${i} : September`);
+                break;
+            case '10':
+                console.log(`${i} : October`);
+                break;
+            case '11':
+                console.log(`${i} : November`);
+                break;
+            case '12':
+                console.log(`${i} : December`);
+                break;
+            default:
+                console.log(`${i} : INVALID MONTH NUMBER`);
+                break;
+        }
+
+
+        var a = 10;
+        var b = '10';
+        var result = (a == b) ? 'EQUAL' : 'NOT EQUAL';
+        console.log(`(a == b) : ${result}`); // EQUAL
+
+        result = (a === b) ? 'EQUAL' : 'NOT EQUAL';
+        console.log(`(a === b) : ${result}`); // NOT EQUAL
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Array demo</h2>
+
+    <script>
+        // 1st way to declare array
+        // var numbers1 = [10, 20, 30, 'vishal', true, 'mahesh'];
+        var numbers1 = [10, 20, 30];
+        console.log(`number of elements numbers1 : ${numbers1.length}`);
+
+        // // 2nd way to declare array
+        // var numbers2 = new Array(10, 20, 30);
+        // console.log(`number of elements numbers2 : ${numbers2.length}`);
+
+        // console.log(numbers1);
+        for (var i = 0; i < numbers1.length; i++) {
+            console.log(numbers1[i]);
+        }
+
+        // // reverse()
+        // var numbers2 = numbers1.reverse(); // it reverses sequence of items
+        // for (var i = 0; i < numbers2.length; i++) {
+        //     console.log(numbers2[i]);
+        // }
+
+        // // push() - it adds item at end in the array
+        // numbers1.push(40);
+        // console.log('after numbers1.push(40)');
+        // for (var i = 0; i < numbers1.length; i++) {
+        //     console.log(numbers1[i]);
+        // }
+
+        // // pop() - returns item from last
+        // var item = numbers1.pop();
+        // console.log(`numbers1.pop() : ${item}`);
+
+        // // unshift() - it adds item at start in the array
+        // numbers1.unshift(5);
+        // console.log('after numbers1.unshift(5)');
+        // for (var i = 0; i < numbers1.length; i++) {
+        //     console.log(numbers1[i]);
+        // }
+
+        // // shift() - returns item from start
+        // item = numbers1.shift();
+        // console.log(`numbers1.shift() : ${item}`);
+
+
+        console.log(`number of elements numbers1 : ${numbers1.length}`);
+        // // numbers1.splice(0, 2);
+        // // numbers1.splice(0, 1);
+        // numbers1.splice(1, 1);
+        // console.log('after numbers1.splice(0, 2)');
+        // for (var i = 0; i < numbers1.length; i++) {
+        //     console.log(numbers1[i]);
+        // }
+
+        // numbers1.splice(2, 0, 5);
+        // numbers1.splice(2, 0, 5, 15, 25);
+        numbers1.splice(1, 1, 15); // 10 20 30
+        console.log('after numbers1.splice(1, 1, 15)');
+        for (var i = 0; i < numbers1.length; i++) {
+            console.log(numbers1[i]);
+        }
+
+        // filter() - to filter items from array
+        var numbers = [3, 5, 1, 2, 6, 4];
+        var result = numbers.filter(even);
+
+        function even(val, ind, array) {
+            if (val % 2 == 0)
+                return true;
+            else
+                return false;
+        }
+
+        for (var i = 0; i < result.length; i++) {
+            console.log(result[i]);
+        }
+
+        var nums = [2, 1, 4, 5, 4, 1];
+        result = nums.filter(unique);
+
+        console.log('nums.filter(unique)');
+        for (var i = 0; i < result.length; i++) {
+            console.log(result[i]);
+        }
+
+        function unique(val, ind, array) {
+            if (array.indexOf(val) == ind) {
+                return true;
+            }
+            else
+                return false;
+        }
+
+
+        // sort() function - to sort array items
+
+        numbers = [1, 11, 86, 45, 718, 17, 8, 22, 456];
+        document.write(numbers + '<br/>');
+        numbers.sort(sortLogic);
+        document.write(numbers + '<br/>');
+
+
+        function sortLogic(a, b) {
+            if (a > b)
+                return 1;
+            else if (a < b)
+                return -1;
+            else
+                return 0;
+        }
+
+    </script>
+</body>
+
+</html>
