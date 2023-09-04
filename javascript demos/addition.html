@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>First Number</td>
+            <td>
+                <input type="text" id="first" />
+            </td>
+        </tr>
+        <tr>
+            <td>Second Number</td>
+            <td>
+                <input type="text" id="second" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Add Two Numbers" onclick="addition()" />
+            </td>
+        </tr>
+        <tr>
+            <td>Result: </td>
+            <td>
+                <input type="text" id="result" readonly/>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function addition() {
+            var first = document.getElementById('first').value;
+            var second = document.getElementById('second').value;
+
+
+            if(isNaN(first)){
+                alert('please enter a valid first number');
+                return false;
+            }
+
+            if(isNaN(second)){
+                alert('please enter a valid second number');
+                return false;
+            }
+
+            // var n1 = parseInt(first);
+            // var n2 = parseInt(second);
+            var n1 = parseFloat(first);
+            var n2 = parseFloat(second);
+
+            var result = n1 + n2;
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+
+</html>

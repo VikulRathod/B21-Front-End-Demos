@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Name : <input type="text" id="txt1" /> <br>
+        <p id="p1">This is first paragraph Content</p>
+        <div id="div1" style="border: 1px solid red;">
+            div content
+            <span>span content</span>
+            <a href="http://www.google.com">Visit Google</a>
+        </div>
+        <br>
+        City: <select id="city">
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Delhi">Delhi</option>
+        </select>
+        <br><br>
+        <button onclick="readData()">Read HTML PAGE VALUES</button>
+        <hr>
+        <button onclick="setData()">Write HTML PAGE VALUES</button>
+
+        <input type="text" id="txt2" />
+        <p id="p2"></p>
+        <div id="div2"></div>
+
+    </div>
+
+    <script>
+        function readData() {
+            var txt1 = document.getElementById('txt1').value;
+            console.log(`textbox value : ${txt1}`);
+
+            var p1 = document.getElementById('p1').innerText;
+            console.log(`paragraph value : ${p1}`);
+
+            var div1 = document.getElementById('div1').innerHTML;
+            console.log(`div value : ${div1}`);
+
+            var city = document.getElementById('city').value;
+            console.log(`selected city : ${city}`);
+        }
+
+        function setData() {
+            var name;
+            console.log(`name : ${name}`);
+
+
+            document.getElementById('txt2').value = 'vihaan';
+            document.getElementById('p2').innerText = 'This is paragraph text';
+            document.getElementById('div2').innerHTML = `div content 
+<span>span content</span>
+<a href='http://www.google.com'>Visit Google</a>
+| <button>Click Me</button>`;
+        }
+
+    </script>
+
+</body>
+
+</html>

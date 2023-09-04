@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Javascript Selectors</h2>
+    <p id="p1">Paragraph 1</p>
+    <p id="p2">Paragraph 2</p>
+    <p id="p3">Paragraph 3</p>
+    <br>
+    <button onclick="logic()">Click Me</button>
+
+    <script>
+        function logic() {
+            // document.getElementById('p2').style.backgroundColor = 'yellow';
+
+            var ps = document.getElementsByTagName('p');
+            // for(var p of ps){
+            //     p.style.backgroundColor = 'yellow';
+            // }
+            ps[1].style.backgroundColor = 'yellow';
+        }
+    </script>
+</body>
+
+</html>

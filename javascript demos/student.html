@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Students List</h2>
+    <input type="text" id="search" />
+    <button onclick="loadStudents()">Load Students</button>
+    <br>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+        </tbody>
+    </table>
+
+    <script>
+        function loadStudents() {
+            // var s1 = { rollNumber: 101, name: 'vishal', city: 'mumbai' };
+            var students = [
+                { rollNumber: 101, name: 'vishal', city: 'mumbai' },
+                { rollNumber: 102, name: 'ramesh', city: 'pune' },
+                { rollNumber: 103, name: 'ritesh', city: 'mumbai' },
+                { rollNumber: 104, name: 'pramod', city: 'delhi' },
+                { rollNumber: 105, name: 'prithvi', city: 'pune' },
+                { rollNumber: 106, name: 'Suraj', city: 'pune' }
+            ];
+            
+            var search = document.getElementById('search').value;
+            if (search != '') {
+                students = students.filter(searchStudents);
+            }
+
+            var data = '';
+            // for (var s of students) {
+            //     // console.log(`${s.rollNumber} ${s.name} ${s.city}`);
+            //     data += '<tr>'
+            //     data += `<td>${s.rollNumber}</td>`;
+            //     data += `<td>${s.name}</td>`;
+            //     data += `<td>${s.city}</td>`;
+            //     data += '</tr>';
+            // }
+
+            for (var i = 0; i < students.length; i++) {
+                // console.log(`${s.rollNumber} ${s.name} ${s.city}`);
+                data += '<tr>'
+                data += `<td>${students[i].rollNumber}</td>`;
+                data += `<td>${students[i].name}</td>`;
+                data += `<td>${students[i].city}</td>`;
+                data += '</tr>';
+            }
+
+            // console.log(data);
+            document.getElementById('data').innerHTML = data;
+        }
+
+        function searchStudents(value, index, students) {
+            var search = document.getElementById('search').value;
+            // if (value.city == search) {
+                if(value.city.match(search) || value.name.match(search)){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
