@@ -87,7 +87,22 @@
         }
 
         var nums = [2, 1, 4, 5, 4, 1];
-        result = nums.filter(unique);
+        // result = nums.filter(unique);
+
+        // result = nums.filter(function (val, ind, array) {
+        //     if (array.indexOf(val) == ind) {
+        //         return true;
+        //     }
+        //     else
+        //         return false;
+        // });
+
+        result = nums.filter((val, ind, array) => {
+            if (array.indexOf(val) == ind)
+                return true;
+            else
+                return false;
+        });
 
         console.log('nums.filter(unique)');
         for (var i = 0; i < result.length; i++) {
