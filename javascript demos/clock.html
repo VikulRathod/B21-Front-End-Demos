@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Clock Demo</h2>
+    <div>
+        <span>Current Time : </span>
+        <span id="currentTime"></span>
+
+        <br>
+        <button onclick="startClock()">Start Clock</button> |
+        <button onclick="stopClock()">Stop Clock</button>
+    </div>
+
+    <script>
+
+        setCurrentTime();
+
+        function setCurrentTime() {
+            var span = document.getElementById('currentTime');
+            span.innerHTML = new Date();
+        }
+
+        var intervalId;
+
+        function startClock() {
+            intervalId = setInterval(setCurrentTime, 1000);
+        }
+
+        function stopClock() {
+            clearInterval(intervalId);
+            clearTimeout(timeOutIntervalId);
+        }
+
+        function notification() {
+            console.log(`response loaded successfully at ${new Date()}`);
+        }
+
+        // notification();
+       timeOutIntervalId = setTimeout(notification, 5000);
+
+    </script>
+</body>
+
+</html>

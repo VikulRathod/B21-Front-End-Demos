@@ -9,5 +9,19 @@
     <h2>Variables Demo</h2>
 
     <script src="js/variables.js"></script>
+    <script>
+        // var keyword scope
+        var v1 = 10;
+        if(v1 == 10){
+            // var v2 = v1; // declared inside if block
+            let v2 = v1; // declared inside if block
+            document.write(`v1 : ${v1} TEN <br/>`);
+            document.write(`v2 : ${v2} TEN <br/>`);
+        } else{
+            document.write(`v1 : ${v1} NOT TEN <br/>`);
+        }
+
+        document.write(`outside if v2 : ${v2} TEN <br/>`);
+    </script>
 </body>
 </html>
