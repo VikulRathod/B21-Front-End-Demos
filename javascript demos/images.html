@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Images Slide Show</h2>
+
+    <marquee direction="horizontal" onmouseover="this.stop()" onmouseout="this.start()">
+        <p>&#9757; Welcome to website image galary. &times;</p>
+    </marquee>
+
+    <div style="text-align: center;">
+        <button>&lt;</button>
+        <img src="images/1.jpg" width="200px" height="100px" onclick="bigSizeImage(this.src)" />
+        &nbsp;&nbsp;
+        <img src="images/2.png" width="200px" height="100px" onclick="bigSizeImage(this.src)" />
+        &nbsp;&nbsp;
+        <img src="images/3.jpg" width="200px" height="100px" onclick="bigSizeImage(this.src)" />
+        <button>&gt;</button>
+    </div>
+
+    <div style="text-align: center;">
+        <button onclick="startShow()">Start Slide Show</button> |
+        <button onclick="stopShow()">Stop Slide Show</button>
+    </div>
+    <img id="siteimage" width="80%" height="250px" style="margin-left: 130px;" />
+
+    <script>
+        var imagesPath = ['images/1.jpg', 'images/2.png', 'images/3.jpg'];
+        var imgIndex = 0;
+
+        function startShow() {
+            intervalId = setInterval(setImage, 1000);
+        }
+
+        function setImage() {
+            var imgElement = document.getElementById('siteimage');
+            imgElement.setAttribute('src', imagesPath[imgIndex]);
+
+            if (imgIndex == imagesPath.length - 1) {
+                imgIndex = 0;
+            } else {
+                imgIndex++;
+            }
+        }
+
+        function stopShow() {
+            clearInterval(intervalId);
+        }
+
+        function bigSizeImage(path) {
+            // console.log(path);
+            var imgElement = document.getElementById('siteimage');
+            imgElement.setAttribute('src', path);
+        }
+
+    </script>
+</body>
+
+</html>

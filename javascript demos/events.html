@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Events Demo</h2>
+    <!-- <button onclick="btnClick()">Click Me!!!</button> -->
+    <button id="btn">Click Me!!!</button>
+    <br>
+    <div id="divMessage">
+    </div>
+
+    <script>
+
+        // document.getElementById('btn').onclick = btnClick; // using DOM property
+
+        btn.addEventListener('click', btnClick);
+
+        function btnClick() {
+            document.getElementById('divMessage').innerHTML =
+                'button clicked <br/>';
+        }
+    </script>
+</body>
+
+</html>

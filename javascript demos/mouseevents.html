@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Mouse Events</h2>
+    <!-- <button onmouseover="btnMouseOver()"
+    onmouseout="btnMouseOut()"
+    onmousedown="btnMouseDown()" 
+    onmouseup="btnMouseUp()"
+    onclick="btnMouseClick()"
+    ondblclick="btnMouseDoubleClick()"
+    oncontextmenu="btnMouseRightClick()">Demo Button</button> -->
+
+    <button onmouseup="identityMouseButton(event)">Demo Button</button>
+    <br>
+    <div id="divMessage"></div>
+    <script>
+        document.getElementById('divMessage').innerHTML = '';
+
+        function btnMouseOver() {
+            document.getElementById('divMessage').innerHTML += 'mouse over event <br/>';
+        }
+
+        function btnMouseOut() {
+            document.getElementById('divMessage').innerHTML += 'mouse out event <br/>';
+        }
+
+        function btnMouseMove() {
+            document.getElementById('divMessage').innerHTML += 'mouse move event <br/>';
+        }
+
+        function btnMouseDown() {
+            document.getElementById('divMessage').innerHTML += 'mouse down event <br/>';
+        }
+
+        function btnMouseUp() {
+            document.getElementById('divMessage').innerHTML += 'mouse up event <br/>';
+        }
+
+        function btnMouseClick() {
+            document.getElementById('divMessage').innerHTML += 'mouse click event <br/>';
+        }
+
+        function btnMouseDoubleClick() {
+            document.getElementById('divMessage').innerHTML += 'mouse double click event <br/>';
+        }
+
+        function btnMouseRightClick() {
+            document.getElementById('divMessage').innerHTML += 'mouse right button click event <br/>';
+        }
+
+        function identityMouseButton(event) {
+            document.getElementById('divMessage').innerHTML += 
+            `${event.which} : ${buttonName(event.which)} <br/>`;
+        }
+
+        function buttonName(btnCode) {
+            switch (btnCode) {
+                case 1:
+                    return 'left button';
+                case 2:
+                    return 'middle button';
+                case 3:
+                    return 'right button';
+                default:
+                    return 'invalid button';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

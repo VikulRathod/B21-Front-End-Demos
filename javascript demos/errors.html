@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Error handling Javascript</h2>
+    <button onclick="closeWindow()">Click to Close Window</button>
+
+    <script>
+
+        function closeWindow() {
+            window.close();
+        }
+
+        window.onerror = function (message, url, line) {
+            document.write(`message : ${message} <br/>
+            url: ${url} <br/>
+            line number : ${line} <br/>`);
+        }
+
+
+        // // error handling using try catch block
+        // try {
+        //     showDetails();
+        // } catch (e) {
+        //     // document.write(`There is some error with page. Please try later.`);
+        //     document.write(e.message);
+        // }
+
+        showDetails();
+
+    </script>
+</body>
+
+</html>
