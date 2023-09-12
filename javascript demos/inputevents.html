@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Input Events</h2>
+    <!-- <input type="text" id="input" 
+    onmouseover="inputEvents(event)"
+    onmouseout="inputEvents(event)"
+    onfocus="inputEvents(event)"
+    onblur="inputEvents(event)"/> -->
+    <!-- <input type="text" id="input" 
+    onfocus="inputEvents(event)" 
+    onblur="inputEvents(event)" 
+    onkeydown="inputEvents(event)"
+    onkeyup="inputEvents(event)"
+    onkeypress="inputEvents(event)"/> -->
+
+    <input type="text" id="input" onkeyup="inputEvents(event)" />
+    <br>
+    Name: <input type="text" id="name" onkeyup="validateName()" />
+    <span id="nameerror" style="color: red;"></span>
+    <hr>
+    <textarea id="message" cols="70" rows="10"></textarea>
+
+    <script>
+        var message = document.getElementById('message');
+        var input = document.getElementById('input');
+        message.value = '';
+
+        // input.focus(); // automatically give focus on textbox
+
+        function inputEvents(event) {
+            // debugger; // remove after debugging work
+
+            if (input.value == '' || input.value == 'undefined') {
+                input.style.border = '1px solid red';
+            }
+
+            // message.value += `event name : ${event.type} \n`;
+            message.value += `key code : ${event.keyCode} \n`;
+            // debugger;
+            if ((event.keyCode >= 48 && event.keyCode <= 57) ||
+                (event.keyCode >= 96 && event.keyCode <= 105)) {
+                input.value = input.value.substring(0, input.value.length - 1);
+            }
+        }
+
+
+        document.getElementById('nameerror').innerHTML = '';
+
+        function validateName() {
+            var name = document.getElementById('name');
+            if (name.value == '' || name.value == 'undefined') {
+                document.getElementById('nameerror').innerHTML = 'Name is required';
+            } else if (name.value.length <= 2) {
+                document.getElementById('nameerror').innerHTML = 
+                'Name should be more than 2 characters';
+            } else if (name.value.length >= 10) {
+                document.getElementById('nameerror').innerHTML = 
+                'Name should be less than 10 characters';
+            } else {
+                document.getElementById('nameerror').innerHTML = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

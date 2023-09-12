@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Event Bubbling Demo</h2>
+    <div id="div1" style="height: 300px;width: 100%;background-color: gray;padding: 20px;">
+        Div Content
+        <span id="span1" style="height: 150px;width: 150px;background-color: aqua;padding: 20px;margin: 30px;">
+            Span Content
+            <button id="btn1">Button</button>
+        </span>
+    </div>
+
+    <script>
+
+        div1.addEventListener('click', divClick);
+        span1.addEventListener('click', spanClick);
+        btn1.addEventListener('click', btnClick);
+
+        // // event capturing
+        // div1.addEventListener('click', divClick, true);
+        // span1.addEventListener('click', spanClick, true);
+        // btn1.addEventListener('click', btnClick, true);
+
+        function divClick(event) {
+            // event.stopPropagation();
+            console.log('div clicked');
+        }
+        function spanClick(event) {
+            // event.stopPropagation();
+            console.log('span clicked');
+        }
+        function btnClick(event) {
+            // event.stopPropagation();
+            console.log('button clicked');
+        }
+    </script>
+</body>
+
+</html>
