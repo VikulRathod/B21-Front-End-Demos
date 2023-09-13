@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Create Form</h2>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" id="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" id="email" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="details.html" onclick="setValues()">Details Page</a>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function setValues() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // sessionStorage.setItem('name', name);
+            // sessionStorage.setItem('email', email);
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+        }
+    </script>
+</body>
+
+</html>

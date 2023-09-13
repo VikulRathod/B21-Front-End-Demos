@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>String Functions</h2>
+    Input: <input type="text" id="input" style="width: 50%;" />
+    <button onclick="Process()">Click Me!!</button>
+    <br>
+    String With Numbers: <input type="text" id="numberString" style="width: 50%;" />
+    <button onclick="getNumbers()">Get Numbers</button>
+    <hr>
+    <textarea id="message" cols="70" rows="10"></textarea>
+
+    <script>
+        var message = document.getElementById('message');
+        message.value = '';
+        var input = document.getElementById('input');
+        input.value = '';
+        function Process() {
+            // message.value = input.value;
+            // var result = input.value.replace('Vihaan', 'Veer');
+            //  var result = input.value.replace(/Vihaan/ig, 'Veer');
+            // var result = input.value.split(/Vihaan/ig);
+            // var result = input.value.split(/ /ig);
+            // var result = input.value.match(/Vihaan/ig);
+            //           var result = input.value.search(/Vihaan/ig);
+            var result = input.value.search(/@/ig);
+            message.value = result;
+        }
+
+
+        function getNumbers() {
+            var numberString = document.getElementById('numberString').value;
+            // // message.value = numberString;
+            // // var result = numberString.match(/\d+/g);
+            // // var result = numberString.match(/\d\d/g);
+            // // var result = numberString.match(/\d{2}/g);
+            // // var result = numberString.match(/[a-z]/gi);
+            // var result = numberString.match(/(a|e|i|o|u)/gi);
+            // message.value = result;
+
+            var regEx = new RegExp('\\d+', 'g');
+            // var result = regEx.exec(numberString); // exec() returns position if found
+            var result = regEx.test(numberString);
+            message.value = result;
+            // console.log(result);
+        }
+    </script>
+</body>
+
+</html>

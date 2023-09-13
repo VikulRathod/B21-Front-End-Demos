@@ -28,16 +28,16 @@
         // span1.addEventListener('click', spanClick, true);
         // btn1.addEventListener('click', btnClick, true);
 
-        function divClick(event) {
-            // event.stopPropagation();
+        function divClick() {
+            event.stopPropagation();
             console.log('div clicked');
         }
-        function spanClick(event) {
-            // event.stopPropagation();
+        function spanClick() {
+            event.stopPropagation();
             console.log('span clicked');
         }
-        function btnClick(event) {
-            // event.stopPropagation();
+        function btnClick() {
+            event.stopPropagation();
             console.log('button clicked');
         }
     </script>

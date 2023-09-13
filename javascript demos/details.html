@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Details Form</h2>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <label id="name"></label>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <label id="email"></label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+              <a href="create.html">Create Page</a>
+            </td>
+        </tr>
+    </table>
+    <script>
+        // var name = sessionStorage.getItem('name');
+        // var email = sessionStorage.getItem('email');
+        var name = localStorage.getItem('name');
+        var email = localStorage.getItem('email');
+
+        document.getElementById('name').innerHTML = name;
+        document.getElementById('email').innerHTML = email;
+    </script>
+</body>
+</html>

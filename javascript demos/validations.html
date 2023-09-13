@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Validations In Javascript</h2>
+    <table>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" id="email" onkeyup="validateEmail()" />
+                <span id="emailError"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>
+                <input type="text" id="mobile" onkeyup="validateMobile()" />
+                <span id="mobileError"></span>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function validateEmail() {
+            // debugger;
+            var email = document.getElementById('email');
+            var emailValue = email.value;
+
+            // email is mandatory
+            if (emailValue != 'undefined' && emailValue.length > 0) {
+                // valid email check
+                var emailPatternRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                if (emailPatternRegEx.test(emailValue)) {
+                    email.style.color = 'black';
+                    email.style.backgroundColor = 'white';
+                    document.getElementById('emailError').innerHTML = '';
+                } else {
+                    email.style.color = 'white';
+                    email.style.backgroundColor = 'red';
+                    document.getElementById('emailError').innerHTML = 'Invalid Email';
+                }
+
+            } else {
+                email.style.color = 'white';
+                email.style.backgroundColor = 'red';
+                document.getElementById('emailError').innerHTML = 'Please enter email';
+            }
+        }
+
+        function validateMobile(){
+            var mobilePatternEx = /^\d{10}$/;
+
+            var mobile = document.getElementById('mobile').value;
+            if(mobilePatternEx.test(mobile)){
+                document.getElementById('mobileError').innerHTML = '';
+            }else{
+                document.getElementById('mobileError').innerHTML = 'INVALID MOBILE NUMBER';
+            }
+        }
+    </script>
+</body>
+
+</html>
