@@ -1,0 +1,39 @@
+ul {
+    list-style-type: none;
+    /* margin: 0; */
+    padding: 20px;
+    background-color: black;
+}
+
+ul li {
+    float: left;
+    /* background-color: black;
+    padding: 10px; */
+}
+
+ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover {
+    color: orange;
+}
+
+/* #mainContent{
+    padding-top: 20px;
+} */
+
+.main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.rightSide{
+    float: right;
+}
+
+.active{
+    color: orange;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Identify second textbox</h3>
+    <input type="text" /> | <input type="text" /> | <input type="text" />
+    <br />
+    <button id="btn">Click Me</button>
+    <br>
+    <input type="button" value="Click Me!!" id="btn1" onclick="changeValue()">
+
+    <script>
+        var inputs = document.getElementsByTagName('input');
+        inputs[1].style.backgroundColor = 'red';
+
+        console.log('normal message');
+        console.error('error message');
+        console.warn('warning message');
+
+        var btn = document.getElementById('btn');
+        console.log(btn);
+
+        "use strict";
+        nonExistingFunction();
+
+        function changeValue() {
+            var btn = document.getElementById('btn1');
+            // console.log(btn.innerHTML);
+            // console.log(btn.innerText);
+            // console.log(btn.value);
+            var value = btn.getAttribute('value');
+            if (value == 'Click Me!!') {
+                btn.setAttribute('value', 'Processing..');
+            } else{
+                btn.setAttribute('value', 'Click Me!!');
+            }
+        }
+
+    </script>
+</body>
+
+</html>
