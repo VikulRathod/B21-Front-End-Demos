@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="lib/jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+
+    <script>
+
+        // $(document).ready(function (){
+        //     document.getElementById('btn').style.backgroundColor = 'red';
+        // });
+
+        // var VHT = $.noConflict();
+
+        // $(function (){
+        //     document.getElementById('btn').style.backgroundColor = 'green';
+        // });
+
+        // jQuery(function () {
+        //     document.getElementById('btn').style.backgroundColor = 'yellow';
+        // });
+
+        // VHT(function () {
+        //     document.getElementById('btn').style.backgroundColor = 'red';
+        // });
+
+        $(function () {
+
+            $('#btn').click(function () {
+                // alert('button clicked');
+                // document.getElementById('heading').style.display = 'none';
+                // document.getElementById('heading').style.display = 'block';
+
+                // var style = document.getElementById('heading').style.display;
+                // if(style == 'block'){
+                //     document.getElementById('heading').style.display = 'none';
+                // } else{
+                //     document.getElementById('heading').style.display = 'block';
+                // }
+
+                // $('#heading').show();
+                // $('#heading').hide();
+                $('#heading').toggle();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- <h2 id="heading" style="display: none;">JQuery Intro</h2> -->
+    <h2 id="heading">JQuery Intro</h2>
+
+    <button id="btn">Click Me</button>
+
+</body>
+
+</html>
