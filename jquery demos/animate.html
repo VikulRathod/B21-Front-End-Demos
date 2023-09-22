@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+
+            $('button:first').click(function () {
+                $('div').animate({
+                    'margin-left': '300px',
+                    'width': '+=50px'
+                }, 10000);
+                // $('div').animate({ 'height': '+=50px' });
+                // $('div').animate({ 'width': '-=50px' });
+                // $('div').animate({ 'height': '-=50px' });
+                // $('div').animate({ 'margin-left': '0px' });
+            });
+
+            $('button:last').click(function(){
+                $('div').stop();
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Animation Effects</h2>
+    <button>Click Me !!!</button> | <button>Stop</button>
+    <div style="height: 100px;width:100px;background-color: red;padding: 40px;">
+        Div Content
+    </div>
+</body>
+
+</html>

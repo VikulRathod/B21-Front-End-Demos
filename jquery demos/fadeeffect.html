@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                // $('div').fadeIn(); // to show
+                // $('div').fadeOut(); // to hide
+                // $('div').fadeToggle(); // to toggle show/hide
+                $('div').fadeTo(2000,0.5, function (){
+                    alert('effect completed');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Fade In Out Effects</h2>
+    <button>Click Me !!!</button>
+    <div style="height: 100px;width:100px;background-color: red;padding: 40px;display: none;">
+        Div Content
+    </div>
+</body>
+</html>

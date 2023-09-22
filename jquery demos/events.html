@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            // $('button').mouseenter(function () {
+            //     $(this).css('background-color', 'green');
+            // });
+
+            // $('button').mouseleave(function () {
+            //     $(this).css('background-color', 'red');
+            // });
+
+            // $('button').hover(function () {
+            //     $(this).css('background-color', 'green');
+            // }, function () {
+            //     $(this).css('background-color', 'red');
+            // });
+
+            // $('button').click(function () {
+            //     $(this).css('background-color', 'white');
+            // });
+
+            // $('button').dblclick(function () {
+            //     $(this).hide();
+            // });
+
+            // $('[type="text"]').focus(function () {
+            //     $(this).css('background-color', 'green');
+            // });
+            // $('[type="text"]').blur(function () {
+            //     $(this).css('background-color', 'red');
+            // });
+            // $('[type="text"]').keyup(function () {
+            //     $(this).css('background-color', 'white');
+            // });
+
+            // $('[type="text"]').on('focus', function (){
+            //     $(this).css('background-color', 'green');
+            // });
+
+            $('[type="text"]').on({
+                focus: function () {
+                    $(this).css('background-color', 'green');
+                },
+                blur: function () {
+                    $(this).css('background-color', 'red');
+                },
+                keyup: function () {
+                    $(this).css('background-color', 'white');
+                }
+            });
+
+            $('button').on({
+                mouseenter: function () {
+                    $(this).css('background-color', 'green');
+                },
+                mouseleave: function () {
+                    $(this).css('background-color', 'red');
+                },
+                click: function () {
+                    $(this).css('background-color', 'white');
+                },
+                dblclick: function () {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Events Demo</h2>
+    <input type="text" />
+    <button>Log In</button>
+
+</body>
+
+</html>
