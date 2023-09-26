@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divContent {
+            background-color: red;
+            border: 5px solid black;
+            height: 200px;
+            width: 200px;
+            padding: 50px;
+        }
+
+        button {
+            height: 40px;
+            width: 120px;
+            margin-left: 45px;
+            margin-top: 45px;
+            border: 5px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Dimensions Demo</h2>
+    <div id="divContent">
+        <button>Click Me !!!</button>
+    </div>
+
+    <button>Second Button !!!</button>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $('button').click(function () {
+
+                console.log($(':button').length);
+
+                var w = $(this).width();
+                console.log(`width : ${w}`);
+                w = $(this).innerWidth();
+                console.log(`inner width : ${w}`);
+                w = $(this).outerWidth();
+                console.log(`outer width : ${w}`);
+                w = $(this).outerWidth(true);
+                console.log(`outer width with true : ${w}`);
+
+                w = $(this).height(); // actual element height
+                console.log(`height : ${w}`);
+                w = $(this).innerHeight(); // element height + both side padding
+                console.log(`inner height : ${w}`);
+                w = $(this).outerHeight(); // element height + both side padding + border size
+                console.log(`outer height : ${w}`);
+                w = $(this).outerHeight(true); // element height + both side padding + border size + margin
+                console.log(`outer height with true : ${w}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
