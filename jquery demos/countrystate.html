@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li ul li ul li {
+            cursor: pointer;
+        }
+
+        .display {
+            background-color: yellow;
+        }
+
+        .bgvNone {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Country City State selection</h2>
+    <h3>Countries</h3>
+    <ul>
+        <li><span>India</span>
+            <ul>
+                <li><span>Maharashtra</span>
+                    <ul>
+                        <li class="city">Mumbai</li>
+                        <li class="city">Pune</li>
+                        <li class="city">Satara</li>
+                    </ul>
+                </li>
+                <li><span>Gujrat</span>
+                    <ul>
+                        <li class="city">Surat</li>
+                        <li class="city">Ahmadabad</li>
+                    </ul>
+                </li>
+                <li><span>Uttar Pradesh</span>
+                    <ul>
+                        <li class="city">Lakhnow</li>
+                        <li class="city">Illahabad</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span>Country 2</span>
+            <ul>
+                <li><span>Country 2 S1</span>
+                    <ul>
+                        <li class="city">City C2 S1 C1</li>
+                        <li class="city">City C2 S1 C11</li>
+                    </ul>
+                </li>
+                <li><span>Country 2 S2</span>
+                    <ul>
+                        <li class="city">City C2 S2 C2</li>
+                        <li class="city">City C2 S2 C22</li>
+                    </ul>
+                </li>
+                <li><span>Country 2 S3</span>
+                    <ul>
+                        <li class="city">City C2 S3 C3</li>
+                        <li class="city">City C2 S3 C33</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span>Country 3</span>
+            <ul>
+                <li><span>Country 3 S1</span>
+                    <ul>
+                        <li class="city">City C3 S1 C1</li>
+                        <li class="city">City C3 S1 C11</li>
+                    </ul>
+                </li>
+                <li><span>Country 3 S2</span>
+                    <ul>
+                        <li class="city">City C3 S2 C2</li>
+                        <li class="city">City C3 S2 C22</li>
+                    </ul>
+                </li>
+                <li><span>Country 3 S3</span>
+                    <ul>
+                        <li class="city">City C3 S3 C3</li>
+                        <li class="city">City C3 S3 C33</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            // $('ul li ul li ul li').click(function () {
+            $('li.city').click(function () {
+                // $(this).css('background-color', 'yellow');
+                // $(this).parent().parent().css('background-color', 'yellow');
+                // $(this).parent().css('background-color', 'white');
+                // $(this).parent().parent().parent().parent().css('background-color', 'yellow');
+                // $(this).parent().parent().parent().css('background-color', 'white');
+
+                $(this).addClass('display');
+                $(this).parent().parent().addClass('display');
+                $(this).parent().addClass('bgvNone');
+                $(this).parent().parent().parent().parent().addClass('display');
+                $(this).parent().parent().parent().addClass('bgvNone');
+
+                console.log(`Selected City : ${$(this).text()}`);
+                console.log(`Selected State : ${$(this).parent().parent().find('span').text()}`);
+                console.log(`Selected Country : ${$(this).parent().parent().parent().parent().find('span:first').text()}`);
+            });
+        });
+    </script>
+</body>
+
+</html>

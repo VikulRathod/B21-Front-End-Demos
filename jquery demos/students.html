@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <h2>All Students</h2>
+
+    <table border="1" id="students">
+        <thead>
+            <tr>
+                <th>RollNumber</th>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Vishal</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Mahesh</td>
+                <td>Mumbai</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Shital</td>
+                <td>Satara</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Dipak</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Priyanka</td>
+                <td>Delhi</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="http://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#students').DataTable({
+                // paging: false,
+                // searching:false
+                pageLength: 3
+            });
+        });
+    </script>
+</body>
+
+</html>

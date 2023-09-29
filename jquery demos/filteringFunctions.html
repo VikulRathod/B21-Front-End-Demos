@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Filtering Functions</h2>
+    <p>First Paragraph</p>
+    <p class="special">Second Paragraph</p>
+    <p>Third Paragraph</p>
+    <p class="special">Fourth Paragraph</p>
+    <p>Fifth Paragraph</p>
+    <hr>
+    <button>Click Me !!!</button>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $('button').click(function () {
+                // $('p').css('background-color', 'yellow');
+                // $('p:first').css('background-color', 'yellow');
+                // $('p').first().css('background-color', 'yellow');
+                // $('p').last().css('background-color', 'yellow');
+                // $('p').eq(2).css('background-color', 'yellow');
+                // $('p').filter('.special').css('background-color', 'yellow');
+                $('p').not('.special').css('background-color', 'yellow');
+            });
+        });
+    </script>
+</body>
+
+</html>
