@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Send Email</h2>
+    <table>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" id="toemail" style="width: 372px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>Subject</td>
+            <td>
+                <input type="text" id="emailsubject" style="width: 372px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>Body</td>
+            <td>
+                <textarea id="emailbody" cols="50" rows="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="sendEmail">Send</button> |
+                <button id="clear">Clear</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label id="message"></label>
+            </td>
+        </tr>
+    </table>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $('#sendEmail').click(function () {
+                var email = $('#toemail').val();
+                var subject = $('#emailsubject').val();
+                var body = $('#emailbody').val();
+
+                var emailData = {
+                    ToEmail: email,
+                    EmailSubject: subject,
+                    EmailBody: body,
+                    IsBodyHtml: true
+                };
+
+                $.ajax({
+                    url: 'http://113.193.63.106:4050/api/email',
+                    type: 'post',
+                    dataType: 'json',
+                    data: JSON.stringify(emailData),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (response) {
+                        // alert('send email success');
+                        $('#message').text('Email sent successfully');
+                        $('#toemail').val('');
+                        $('#emailsubject').val('');
+                        $('#emailbody').val('');
+                    },
+                    error: function (reason) {
+                        alert(`send email call failed`);
+                        console.log(reason);
+                    }
+                });
+            });
+
+            $('#clear').click(function () {
+                $('#message').text('');
+                $('#toemail').val('');
+                $('#emailsubject').val('');
+                $('#emailbody').val('');
+            });
+        });
+    </script>
+</body>
+
+</html>

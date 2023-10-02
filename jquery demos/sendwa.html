@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Send WhatsApp Message</h2>
+    <table>
+        <tr>
+            <td>Mobile</td>
+            <td>
+                <input type="text" id="wamobile" style="width: 372px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td>
+                <textarea id="wamessage" cols="50" rows="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="sendEmail">Send</button> |
+                <button id="clear">Clear</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label id="message"></label>
+            </td>
+        </tr>
+    </table>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $('#sendEmail').click(function () {
+                var mobile = $('#wamobile').val();
+                var message = $('#wamessage').val();
+
+                var mobileData = {
+                    Phone: mobile,
+                    Body: message,
+                    Type: 0
+                };
+
+                $.ajax({
+                    url: 'http://113.193.63.106:4050/api/whatsapp',
+                    type: 'post',
+                    dataType: 'json',
+                    data: JSON.stringify(mobileData),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (response) {
+                        // alert('send email success');
+                        $('#message').text('Message sent successfully');
+                        $('#wamobile').val('');
+                        $('#wamessage').val('');
+                    },
+                    error: function (reason) {
+                        alert(`send message failed`);
+                        console.log(reason);
+                    }
+                });
+            });
+
+            $('#clear').click(function () {
+                $('#wamobile').val('');
+                $('#wamessage').val('');
+                $('#message').text('');
+            });
+        });
+    </script>
+</body>
+
+</html>
