@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Droppable - Default functionality</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #draggable {
+            width: 100px;
+            height: 250px;
+            padding: 0.5em;
+            float: left;
+            margin: 10px 10px 10px 0;
+        }
+
+        #draggable span {
+            border: 1px solid gray;
+            padding: 2px;
+        }
+
+        #droppable {
+            width: 150px;
+            height: 250px;
+            padding: 0.5em;
+            float: left;
+            margin: 10px;
+        }
+
+        .congratulations {
+            background-color: lightgreen;
+        }
+        .sqlClass{
+            background-color: yellow;
+        }
+        .csharpClass{
+            background-color: lightblue;
+        }
+        .jsClass{
+            background-color: gray;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#draggable span").draggable();
+            // $("#droppable").droppable();
+            $("#droppable").droppable({
+                drop: function (event, ui) {
+                    // console.log(ui.draggable.text());
+                    var className = '';
+                    switch (ui.draggable.text()) {
+                        case 'SQL':
+                            className = 'sqlClass';
+                            break;
+                        case 'C#':
+                            className = 'csharpClass';
+                            break;
+                        case 'JAVASCRIPT':
+                            className = 'jsClass';
+                            break;
+                        default:
+                            className = 'congratulations';
+                            break;
+                    }
+
+                    $(this)
+                        .addClass(className)
+                        .find("p")
+                        .html("Dropped!");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="draggable">
+        <h3>All Skills</h3>
+        <span>SQL</span><br>
+        <span>C#</span><br>
+        <span>LINQ</span><br>
+        <span>JAVASCRIPT</span><br>
+        <span>JQUERY</span>
+    </div>
+
+    <div id="droppable" class="ui-widget-header">
+        <h4>Prepared Skills For Mock</h4>
+    </div>
+
+
+</body>
+
+</html>

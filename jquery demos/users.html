@@ -22,14 +22,30 @@
     <script>
         $(function () {
             $('button').click(function () {
-                $.get('https://jsonplaceholder.typicode.com/users',
-                    function (response, status) {
-                        // console.log(data);
-                        // console.log(status);
-                        // for(var i = 0; i < data.length;i++){
-                        //     console.log(data[i].name);
-                        // }
+                // $.get('https://jsonplaceholder.typicode.com/users1',
+                //     function (response, status) {
+                //         // console.log(data);
+                //         // console.log(status);
+                //         // for(var i = 0; i < data.length;i++){
+                //         //     console.log(data[i].name);
+                //         // }
 
+                //         $('#users').show();
+                //         $('#users').DataTable({
+                //             columns: [
+                //                 {title: 'id', data: 'id' },
+                //                 {title: 'name', data:'name'},
+                //                 {title: 'username', data: 'username'},
+                //                 {title: 'email', data: 'email'}
+                //             ],
+                //             data: response
+                //         });
+                //     });
+
+                $.ajax({
+                    url:'https://jsonplaceholder.typicode.com/users',
+                    type: 'get',
+                    success: function (response){
                         $('#users').show();
                         $('#users').DataTable({
                             columns: [
@@ -40,7 +56,20 @@
                             ],
                             data: response
                         });
-                    });
+                    },
+                    error: function (errorData){
+                        $('#users').show();
+                        $('#users').DataTable({
+                            columns: [
+                                {title: 'id'},
+                                {title: 'name'},
+                                {title: 'username'},
+                                {title: 'email'}
+                            ]
+                        });
+                    }
+                });
+
             });
         });
     </script>

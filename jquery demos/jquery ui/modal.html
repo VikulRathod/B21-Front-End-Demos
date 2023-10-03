@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog - Animation</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <style>
+        .ui-dialog-titlebar {
+            background-color: lightgreen;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+                // title: `<h2 style="background-color: lightgreen;color: green;font-weight: bold;"
+                // >Congratulations !!!</h2>`
+            });
+
+            $("#opener").on("click", function () {
+                $("#dialog").dialog("open");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="dialog" title="Create New Account">
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" placeholder="first name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input type="text" placeholder="last name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" placeholder="enter email"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Submit"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <button id="opener">Open Dialog</button>
+
+
+</body>
+
+</html>
