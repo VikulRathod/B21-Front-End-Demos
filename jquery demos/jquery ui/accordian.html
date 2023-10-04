@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Accordion - Customize icons</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <style>
+        .ui-accordion-content {
+            background-color: lightblue;
+            height: 250px;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            var icons = {
+                header: "ui-icon-circle-arrow-e",
+                activeHeader: "ui-icon-circle-arrow-s"
+            };
+            $("#accordion").accordion({
+                icons: icons
+            });
+            $("#toggle").button().on("click", function () {
+                if ($("#accordion").accordion("option", "icons")) {
+                    $("#accordion").accordion("option", "icons", null);
+                } else {
+                    $("#accordion").accordion("option", "icons", icons);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="accordion">
+        <h3>SQL SESSIONS</h3>
+        <div>
+            <p>SQL all sessions. Learn SQL as a beginner</p>
+        </div>
+        <h3>C# SESSIONS</h3>
+        <div>
+            <p>C# all sessions. Learn C# as a beginner</p>
+        </div>
+        <h3>JAVASCRIPT SESSIONS</h3>
+        <div>
+            <p>JAVASCRIPT all sessions. Learn JAVASCRIPT as a beginner</p>
+            <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+            </ul>
+            <pre>
+                JavaScript is the world's most popular programming language.
+
+                JavaScript is the programming language of the Web.
+
+                JavaScript is easy to learn.
+
+                This tutorial will teach you JavaScript from basic to advanced.
+            </pre>
+            <p>
+                Use the Menu
+                We recommend reading this tutorial, in the sequence listed in the menu.
+
+                If you have a large screen, the menu will always be present on the left.
+
+                If you have a small screen, open the menu by clicking the top menu sign
+            </p>
+        </div>
+        <h3>JQUERY SESSIONS</h3>
+        <div>
+            <p>JQUERY all sessions. Learn JQEURY as a beginner</p>
+            <p>select 2 library all sessions. Learn select 2 library as a beginner</p>
+        </div>
+    </div>
+
+    <button id="toggle">Toggle icons</button>
+
+
+</body>
+
+</html>
