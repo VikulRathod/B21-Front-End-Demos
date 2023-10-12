@@ -16,7 +16,7 @@
     <div class="container">
         <h2>Forms Demo</h2>
 
-        <!-- <form action="" method="post" class="col-4 border border-1 p-3 rounded-3">
+        <form action="" method="post" class="col-4 border border-1 p-3 rounded-3">
             <div class="mb-3 mt-3">
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
@@ -61,7 +61,7 @@
                 </label>
             </div>
             <button type="submit" class="btn btn-primary form-control">Submit</button>
-        </form> -->
+        </form>
 
         <hr>
 
@@ -106,12 +106,21 @@
                 <label class="form-check-label"></label>
             </div>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" 
-                id="mySwitch" name="darkmode" value="yes">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes">
                 <label class="form-check-label" for="mySwitch">Turn On</label>
             </div>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#browser').on('change', function () {
+                alert('option changed');
+                $('#browser').attr('readonly', true);
+            });
+        });
+    </script>
+
 </body>
 
 </html>
